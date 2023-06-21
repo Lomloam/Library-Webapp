@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-
+const password = "";
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -20,7 +20,7 @@ app.post("/submit", (req, res) => {
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "",
+  password: password,
   database: "coollibrarysystem",
 });
 
