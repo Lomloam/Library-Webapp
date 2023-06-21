@@ -1,0 +1,30 @@
+form {
+    margin-top: 100px;
+    display: inline-block;
+}
+body{
+    text-align: center;
+}
+input {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 5px;    
+    border-radius: 3px;
+
+}
+label {
+    margin-top: 5px;
+    color: rgb(183, 183, 183);
+}
+.submitButton{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.submitButton:hover {
+    cursor: pointer;
+    background-color: rgb(195, 195, 195);
+
+}
