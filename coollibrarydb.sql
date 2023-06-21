@@ -65,7 +65,7 @@ CREATE TABLE `author_writes_book` (
 
 LOCK TABLES `author_writes_book` WRITE;
 /*!40000 ALTER TABLE `author_writes_book` DISABLE KEYS */;
-INSERT INTO `author_writes_book` VALUES ('Author E',12345678),('Author A',123456789),('Author B',234567890),('Author C',345678901),('Author D',456789012),('Author E',567890123),('Author A',678901234),('Author C',789012345),('Author D',890123456),('Author C',901234567);
+INSERT INTO `author_writes_book` VALUES ('Author A',1),('Author B',2),('Author C',3),('Author D',4),('Author E',5),('Author A',6),('Author B',10),('Author C',11),('Author D',12),('Author E',12345678),('Author A',123456789),('Author B',234567890),('Author C',345678901),('Author D',456789012),('Author E',567890123),('Author A',678901234),('Author C',789012345),('Author D',890123456),('Author C',901234567);
 /*!40000 ALTER TABLE `author_writes_book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (12345678,'Book J','2013-06-14','Biography','Expert','Publisher J','This is Book J description.',3,3),(123456789,'Book A','2022-01-01','Fiction','Intermediate','Publisher A','This is Book A description.',3,3),(234567890,'Book B','2021-05-15','Non-Fiction','Beginner','Publisher B','This is Book B description.',3,1),(345678901,'Book C','2020-11-30','Mystery','Hard','Publisher C','This is Book C description.',3,3),(456789012,'Book D','2019-07-22','Science Fiction','Expert','Publisher D','This is Book D description.',3,3),(567890123,'Book E','2018-04-12','Fantasy','Intermediate','Publisher E','This is Book E description.',3,1),(678901234,'Book F','2017-09-18','Romance','Beginner','Publisher F','This is Book F description.',3,0),(789012345,'Book G','2016-03-05','Horror','Hard','Publisher G','This is Book G description.',3,3),(890123456,'Book H','2015-12-10','Thriller','Intermediate','Publisher H','This is Book H description.',3,3),(901234567,'Book I','2014-08-25','Historical Fiction','Beginner','Publisher I','This is Book I description.',3,3);
+INSERT INTO `book` VALUES (1,'1984','1949-06-08','Science Fiction','Hard','Publisher D','A dystopian novel that portrays a totalitarian society and explores themes of surveillance and government control.',2,1),(2,'Pride and Prejudice','1813-01-28','Romance','Intermediate','Publisher E','Jane Austen\'s classic novel of love, societal expectations, and the power of first impressions.',2,2),(3,'The Shining','1977-01-28','Horror','Hard','Publisher F','A psychological horror novel by Stephen King, set in an isolated hotel where supernatural events unfold.',2,2),(4,'The Da Vinci Code','2003-04-01','Mystery','Expert','Publisher C','A thrilling mystery novel that combines art, history, and religion.',2,2),(5,'To Kill a Mockingbird','2010-07-01','Historical Fiction','Intermediate','Publisher B','A Pulitzer Prize-winning novel set in the 1930s, addressing racial injustice and moral development.',2,2),(6,'The Secret Garden','2022-03-15','Horror','Beginner','Publisher A','A classic children\'s novel about a young girl who discovers a hidden garden.',2,2),(10,'The Great Gatsby','1925-04-10','Fiction','Intermediate','Publisher G','F. Scott Fitzgerald\'s iconic novel set in the Roaring Twenties, exploring themes of wealth, love, and the American Dream.',2,1),(11,'The Hobbit','1937-09-21','Fantasy','Intermediate','Publisher H','A fantasy adventure novel by J.R.R. Tolkien, following the journey of Bilbo Baggins.',2,2),(12,'Gone Girl','2012-06-05','Thriller','Expert','Publisher I','A gripping psychological thriller about a missing wife and the dark secrets that unravel.',2,0),(12345678,'Book J','2013-06-14','Biography','Expert','Publisher J','This is Book J description.',3,3),(123456789,'Book A','2022-01-01','Fiction','Intermediate','Publisher A','This is Book A description.',3,3),(234567890,'Book B','2021-05-15','Non-Fiction','Beginner','Publisher B','This is Book B description.',3,1),(345678901,'Book C','2020-11-30','Mystery','Hard','Publisher C','This is Book C description.',3,3),(456789012,'Book D','2019-07-22','Science Fiction','Expert','Publisher D','This is Book D description.',3,3),(567890123,'Book E','2018-04-12','Fantasy','Intermediate','Publisher E','This is Book E description.',3,1),(678901234,'Book F','2017-09-18','Romance','Beginner','Publisher F','This is Book F description.',3,0),(789012345,'Book G','2016-03-05','Horror','Hard','Publisher G','This is Book G description.',3,3),(890123456,'Book H','2015-12-10','Thriller','Intermediate','Publisher H','This is Book H description.',3,3),(901234567,'Book I','2014-08-25','Historical Fiction','Beginner','Publisher I','This is Book I description.',3,3);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `book_copy` (
   KEY `library` (`library`),
   CONSTRAINT `book_copy_ibfk_1` FOREIGN KEY (`bookIsbn`) REFERENCES `book` (`isbn`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `book_copy_ibfk_2` FOREIGN KEY (`library`) REFERENCES `library` (`libraryName`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `book_copy` (
 
 LOCK TABLES `book_copy` WRITE;
 /*!40000 ALTER TABLE `book_copy` DISABLE KEYS */;
-INSERT INTO `book_copy` VALUES (1,123456789,_binary '','Central Library'),(2,123456789,_binary '','North Branch Library'),(3,123456789,_binary '','Central Library'),(4,234567890,_binary '\0','North Branch Library'),(5,234567890,_binary '\0','Central Library'),(6,234567890,_binary '','Central Library'),(7,345678901,_binary '','North Branch Library'),(8,345678901,_binary '','Central Library'),(9,345678901,_binary '','North Branch Library'),(10,456789012,_binary '','Central Library'),(11,456789012,_binary '','Central Library'),(12,456789012,_binary '','North Branch Library'),(13,567890123,_binary '\0','Central Library'),(14,567890123,_binary '\0','North Branch Library'),(15,567890123,_binary '','Central Library'),(16,678901234,_binary '\0','Central Library'),(17,678901234,_binary '\0','North Branch Library'),(18,678901234,_binary '\0','Central Library'),(19,789012345,_binary '','North Branch Library'),(20,789012345,_binary '','Central Library'),(21,789012345,_binary '','Central Library'),(22,890123456,_binary '','North Branch Library'),(23,890123456,_binary '','Central Library'),(24,890123456,_binary '','North Branch Library'),(25,901234567,_binary '','Central Library'),(26,901234567,_binary '','Central Library'),(27,901234567,_binary '','North Branch Library'),(28,12345678,_binary '','Central Library'),(29,12345678,_binary '','Central Library'),(30,12345678,_binary '','North Branch Library');
+INSERT INTO `book_copy` VALUES (1,123456789,_binary '','Central Library'),(2,123456789,_binary '','North Branch Library'),(3,123456789,_binary '','Central Library'),(4,234567890,_binary '\0','North Branch Library'),(5,234567890,_binary '\0','Central Library'),(6,234567890,_binary '','Central Library'),(7,345678901,_binary '','North Branch Library'),(8,345678901,_binary '','Central Library'),(9,345678901,_binary '','North Branch Library'),(10,456789012,_binary '','Central Library'),(11,456789012,_binary '','Central Library'),(12,456789012,_binary '','North Branch Library'),(13,567890123,_binary '\0','Central Library'),(14,567890123,_binary '\0','North Branch Library'),(15,567890123,_binary '','Central Library'),(16,678901234,_binary '\0','Central Library'),(17,678901234,_binary '\0','North Branch Library'),(18,678901234,_binary '\0','Central Library'),(19,789012345,_binary '','North Branch Library'),(20,789012345,_binary '','Central Library'),(21,789012345,_binary '','Central Library'),(22,890123456,_binary '','North Branch Library'),(23,890123456,_binary '','Central Library'),(24,890123456,_binary '','North Branch Library'),(25,901234567,_binary '','Central Library'),(26,901234567,_binary '','Central Library'),(27,901234567,_binary '','North Branch Library'),(28,12345678,_binary '','Central Library'),(29,12345678,_binary '','Central Library'),(30,12345678,_binary '','North Branch Library'),(31,1,_binary '\0','Central Library'),(32,2,_binary '','North Branch Library'),(33,3,_binary '','Central Library'),(34,4,_binary '','North Branch Library'),(35,5,_binary '','Central Library'),(36,6,_binary '','North Branch Library'),(37,11,_binary '','Central Library'),(38,12,_binary '\0','North Branch Library'),(39,1,_binary '','Central Library'),(40,10,_binary '\0','North Branch Library'),(41,3,_binary '','Central Library'),(42,2,_binary '','North Branch Library'),(43,4,_binary '','Central Library'),(44,5,_binary '','North Branch Library'),(45,6,_binary '','Central Library'),(46,10,_binary '','North Branch Library'),(47,11,_binary '','Central Library'),(48,12,_binary '\0','North Branch Library');
 /*!40000 ALTER TABLE `book_copy` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -220,7 +220,7 @@ CREATE TABLE `borrowing_history` (
 
 LOCK TABLES `borrowing_history` WRITE;
 /*!40000 ALTER TABLE `borrowing_history` DISABLE KEYS */;
-INSERT INTO `borrowing_history` VALUES (4,8,'2023-06-20','2023-06-27'),(5,7,'2023-06-20','2023-06-27'),(13,10,'2023-06-20','2023-06-27'),(14,9,'2023-06-20','2023-06-27'),(16,11,'2023-06-20','2023-06-27'),(17,7,'2023-06-20','2023-06-27'),(18,13,'2023-06-20','2023-06-27');
+INSERT INTO `borrowing_history` VALUES (4,8,'2023-06-20','2023-06-27'),(5,7,'2023-06-20','2023-06-27'),(13,10,'2023-06-20','2023-06-27'),(14,9,'2023-06-20','2023-06-27'),(16,11,'2023-06-20','2023-06-27'),(17,7,'2023-06-20','2023-06-27'),(18,13,'2023-06-20','2023-06-27'),(31,17,'2023-06-21','2023-06-28'),(38,20,'2023-06-21','2023-06-28'),(40,20,'2023-06-21','2023-06-28'),(48,11,'2023-06-21','2023-06-28');
 /*!40000 ALTER TABLE `borrowing_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -357,7 +357,7 @@ CREATE TABLE `reader` (
   `telephone` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`readerNo`),
   UNIQUE KEY `name` (`name`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -366,7 +366,7 @@ CREATE TABLE `reader` (
 
 LOCK TABLES `reader` WRITE;
 /*!40000 ALTER TABLE `reader` DISABLE KEYS */;
-INSERT INTO `reader` VALUES (7,'John Smith','johnsmith@example.com',123,'Main Street','CA',12345,0,'1234567890'),(8,'Emily Johnson','emilyjohnson@example.com',456,'Maple Avenue','NY',54321,0,'9876543210'),(9,'Michael Brown','michaelbrown@example.com',789,'Oak Street','TX',67890,0,'5678901234'),(10,'Sophia Davis','sophiadavis@example.com',321,'Cedar Road','FL',45678,0,'4321098765'),(11,'William Johnson','williamjohnson@example.com',654,'Pine Street','WA',23456,0,'9012345678'),(12,'Olivia Wilson','oliviawilson@example.com',987,'Elm Avenue','MA',76543,0,'3456789012'),(13,'James Anderson','jamesanderson@example.com',210,'Spruce Lane','IL',56789,0,'7890123456'),(14,'Emma Thomas','emmathomas@example.com',543,'Birch Street','PA',98765,0,'2109876543'),(15,'Alexander Davis','alexanderdavis@example.com',876,'Cypress Road','OH',34567,0,'8765432109'),(16,'Ava Martin','avamartin@example.com',109,'Sycamore Lane','MI',45678,0,'6543210987'),(17,'aadfs','kosar.liam@gmail.com',14317,'SE 78th Way','WA',98059,0,'4255983119'),(18,'John Jones','kosar.liam@gmail.com',14317,'SE 78th Way','MA',98059,0,'4255983119');
+INSERT INTO `reader` VALUES (7,'John Smith','johnsmith@example.com',123,'Main Street','CA',12345,169,'1234567890'),(8,'Emily Johnson','emilyjohnson@example.com',456,'Maple Avenue','NY',54321,10,'9876543210'),(9,'Michael Brown','michaelbrown@example.com',789,'Oak Street','TX',67890,3,'5678901234'),(10,'Sophia Davis','sophiadavis@example.com',321,'Cedar Road','FL',45678,0,'4321098765'),(11,'William Johnson','williamjohnson@example.com',654,'Pine Street','WA',23456,0,'9012345678'),(12,'Olivia Wilson','oliviawilson@example.com',987,'Elm Avenue','MA',76543,0,'3456789012'),(13,'James Anderson','jamesanderson@example.com',210,'Spruce Lane','IL',56789,0,'7890123456'),(14,'Emma Thomas','emmathomas@example.com',543,'Birch Street','PA',98765,0,'2109876543'),(15,'Alexander Davis','alexanderdavis@example.com',876,'Cypress Road','OH',34567,0,'8765432109'),(16,'Ava Martin','avamartin@example.com',109,'Sycamore Lane','MI',45678,0,'6543210987'),(17,'aadfs','kosar.liam@gmail.com',14317,'SE 78th Way','WA',98059,0,'4255983119'),(18,'John Jones','kosar.liam@gmail.com',14317,'SE 78th Way','MA',98059,0,'4255983119'),(19,'John Doe','johndoe@example.com',10,'Main Street','CA',12345,0,'1234567890'),(20,'Alice Johnson','alicejohnson@example.com',15,'Oak Avenue','NY',54321,0,'9876543210'),(21,'Michael Smith','michaelsmith@example.com',5,'Elm Street','TX',98765,0,'5551234567'),(22,'Sarah Thompson','sarahthompson@example.com',25,'Cedar Road','FL',67890,0,'1112223333'),(23,'David Wilson','davidwilson@example.com',8,'Pine Avenue','OH',45678,0,'9998887777'),(24,'Emily Davis','emilydavis@example.com',18,'Birch Street','IL',76543,0,'4445556666'),(25,'Jacob Anderson','jacobanderson@example.com',12,'Willow Road','PA',23456,0,'2223334444'),(26,'Olivia Garcia','oliviagarcia@example.com',30,'Maple Avenue','AZ',34567,0,'7776665555'),(27,'William Martinez','williammartinez@example.com',22,'Spruce Street','WA',56789,0,'8889990000'),(28,'Sophia Robinson','sophiarobinson@example.com',14,'Ash Road','GA',45678,0,'3334445555');
 /*!40000 ALTER TABLE `reader` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,7 +393,7 @@ CREATE TABLE `reader_registered_for_class` (
 
 LOCK TABLES `reader_registered_for_class` WRITE;
 /*!40000 ALTER TABLE `reader_registered_for_class` DISABLE KEYS */;
-INSERT INTO `reader_registered_for_class` VALUES (7,'Mystery Book Class'),(8,'Fantasy Book Class'),(9,'Sci-Fi Book Class'),(10,'Romance Book Class'),(11,'Mystery Book Class');
+INSERT INTO `reader_registered_for_class` VALUES (7,'Mystery Book Class'),(8,'Fantasy Book Class'),(9,'Sci-Fi Book Class'),(10,'Romance Book Class'),(11,'Mystery Book Class'),(19,'Fantasy Book Class'),(20,'Mystery Book Class'),(21,'Romance Book Class'),(22,'Sci-Fi Book Class'),(23,'Fantasy Book Class'),(24,'Mystery Book Class'),(25,'Romance Book Class'),(26,'Sci-Fi Book Class'),(27,'Fantasy Book Class'),(28,'Mystery Book Class');
 /*!40000 ALTER TABLE `reader_registered_for_class` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -981,4 +981,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-20 18:07:47
+-- Dump completed on 2023-06-21 15:16:04
