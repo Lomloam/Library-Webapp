@@ -20,7 +20,7 @@ app.post("/submit", (req, res) => {
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Ldawg2004",
+  password: "",
   database: "coollibrarysystem",
 });
 
