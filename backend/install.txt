@@ -1,0 +1,5 @@
+npm install react-router-dom 
+npm install --save styled-components
+mysql
+body-parser
+express
